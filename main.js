@@ -46,7 +46,7 @@ function requestHEAD(url='https://google.com/') {
     })
 }
 
-function fetchWords(rawurl, fast) {
+function fetchWords(rawurl, fast=false) {
     return new Promise((rs, rj)=>{
         let rd = fs.createReadStream('./words.txt', 'utf-8');
         let data = '';
@@ -65,7 +65,8 @@ function fetchWords(rawurl, fast) {
 
 function createJSONList(arr, rawurl) {
     try {
-        if(arr.length == 0) throw '';
+        if(arr.length == 0) throw 'No array';
+        if(!rawurl) throw 'No URL';
         return arr
         .reduce((obj,resolve)=>{
             switch(resolve.status) {
