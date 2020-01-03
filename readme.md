@@ -1,4 +1,4 @@
-#Nuzzer - A simple URL Fuzzer for Node.js
+# Nuzzer - A simple URL Fuzzer for Node.js
 
 ? - Optional
 
